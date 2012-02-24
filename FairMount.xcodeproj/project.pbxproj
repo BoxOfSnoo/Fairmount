@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		311350580A1C03B4001BC27C /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 311350570A1C03B4001BC27C /* LICENSE.txt */; };
+		311350780A1C0686001BC27C /* Decryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 311350770A1C0686001BC27C /* Decryption.m */; };
+		3120F23A0A1AAE660042B67C /* socketWrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 312BF9800A0D59F900381747 /* socketWrap.c */; };
+		3120F23C0A1AAE660042B67C /* FileSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 31A4982A0A0E813300847D56 /* FileSize.c */; };
+		3120F23E0A1AAE660042B67C /* FileAccess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31A49A5B0A0E98C600847D56 /* FileAccess.cpp */; };
+		3120F23F0A1AAE660042B67C /* CSSFileAccess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31A4981B0A0E800700847D56 /* CSSFileAccess.cpp */; };
+		3120F2400A1AAE660042B67C /* CachedFileAccess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31A498DE0A0E84DA00847D56 /* CachedFileAccess.cpp */; };
+		3120F2420A1AAE660042B67C /* ListFiles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31A49B620A126E3E00847D56 /* ListFiles.cpp */; };
+		3120F2440A1AAE660042B67C /* HTTPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3120F1270A1AA1400042B67C /* HTTPServer.cpp */; };
+		313F37A80A1D400A005C4D42 /* Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 313F37A70A1D400A005C4D42 /* Overlay.m */; };
+		313F6FC80A5F6CF2003C414B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313F6FC70A5F6CF2003C414B /* IOKit.framework */; };
+		315DE8E611909DF500C41893 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 315DE8E511909DF500C41893 /* dsa_pub.pem */; };
+		315DE8FD11909F1900C41893 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315DE8FC11909F1900C41893 /* Sparkle.framework */; };
+		315DE90211909F3700C41893 /* Sparkle.framework in Copy Private Frameworks */ = {isa = PBXBuildFile; fileRef = 315DE8FC11909F1900C41893 /* Sparkle.framework */; };
+		31809BDB0A20EFAE0033AE82 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 31809BDA0A20EFAE0033AE82 /* Credits.rtf */; };
+		31809C2C0A20F8E20033AE82 /* Help.html in Copy Help Files */ = {isa = PBXBuildFile; fileRef = 31809C220A20F89D0033AE82 /* Help.html */; };
+		31AE8F290A48A949001F92B4 /* fairmount.png in Copy Help Files */ = {isa = PBXBuildFile; fileRef = 31AE8F270A48A936001F92B4 /* fairmount.png */; };
+		31B6ECAA0A3DF38D00F531DB /* fairmount_frame1.png in Copy Help Files */ = {isa = PBXBuildFile; fileRef = 31B6ECA20A3DF38D00F531DB /* fairmount_frame1.png */; };
+		31B6ECAB0A3DF38D00F531DB /* fairmount_frame8.png in Copy Help Files */ = {isa = PBXBuildFile; fileRef = 31B6ECA30A3DF38D00F531DB /* fairmount_frame8.png */; };
+		31B6ECAC0A3DF38D00F531DB /* fairmount_frame4.png in Copy Help Files */ = {isa = PBXBuildFile; fileRef = 31B6ECA40A3DF38D00F531DB /* fairmount_frame4.png */; };
+		31B6ECAD0A3DF38D00F531DB /* fairmount_frame5.png in Copy Help Files */ = {isa = PBXBuildFile; fileRef = 31B6ECA50A3DF38D00F531DB /* fairmount_frame5.png */; };
+		31B6ECAE0A3DF38D00F531DB /* fairmount_frame7.png in Copy Help Files */ = {isa = PBXBuildFile; fileRef = 31B6ECA60A3DF38D00F531DB /* fairmount_frame7.png */; };
+		31B6ECAF0A3DF38D00F531DB /* fairmount_frame3.png in Copy Help Files */ = {isa = PBXBuildFile; fileRef = 31B6ECA70A3DF38D00F531DB /* fairmount_frame3.png */; };
+		31B6ECB00A3DF38D00F531DB /* fairmount_frame6.png in Copy Help Files */ = {isa = PBXBuildFile; fileRef = 31B6ECA80A3DF38D00F531DB /* fairmount_frame6.png */; };
+		31B6ECB10A3DF38D00F531DB /* fairmount_frame2.png in Copy Help Files */ = {isa = PBXBuildFile; fileRef = 31B6ECA90A3DF38D00F531DB /* fairmount_frame2.png */; };
+		31D10D5F0A1A7F0C00B773AB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D10D5E0A1A7F0C00B773AB /* Cocoa.framework */; };
+		31D10D6D0A1A7F2B00B773AB /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 31D10D6C0A1A7F2B00B773AB /* MainMenu.nib */; };
+		31D10D840A1A81B900B773AB /* DiskArbitration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D10D830A1A81B900B773AB /* DiskArbitration.framework */; };
+		31F102C80F3263DA00D80F5D /* Fairmount.mm in Sources */ = {isa = PBXBuildFile; fileRef = 31F102C60F3263DA00D80F5D /* Fairmount.mm */; };
+		E25B36560A1D783D0005E3CB /* eject.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B36550A1D783D0005E3CB /* eject.png */; };
+		E25B365E0A1D7AE20005E3CB /* dvd.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B365D0A1D7AE20005E3CB /* dvd.png */; };
+		E25B369F0A1D971F0005E3CB /* fmprog1.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B369B0A1D971F0005E3CB /* fmprog1.png */; };
+		E25B36A00A1D971F0005E3CB /* fmprog2.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B369C0A1D971F0005E3CB /* fmprog2.png */; };
+		E25B36A10A1D971F0005E3CB /* fmprog3.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B369D0A1D971F0005E3CB /* fmprog3.png */; };
+		E25B36A20A1D971F0005E3CB /* fmprog4.png in Resources */ = {isa = PBXBuildFile; fileRef = E25B369E0A1D971F0005E3CB /* fmprog4.png */; };
+		E2CA5F880A4876CF00ACAC60 /* fairmount.icns in Resources */ = {isa = PBXBuildFile; fileRef = E2CA5F870A4876CF00ACAC60 /* fairmount.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		315DE90611909F4300C41893 /* Copy Private Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				315DE90211909F3700C41893 /* Sparkle.framework in Copy Private Frameworks */,
+			);
+			name = "Copy Private Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31809C280A20F8CA0033AE82 /* Copy Help Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Help;
+			dstSubfolderSpec = 7;
+			files = (
+				31AE8F290A48A949001F92B4 /* fairmount.png in Copy Help Files */,
+				31B6ECAA0A3DF38D00F531DB /* fairmount_frame1.png in Copy Help Files */,
+				31B6ECAB0A3DF38D00F531DB /* fairmount_frame8.png in Copy Help Files */,
+				31B6ECAC0A3DF38D00F531DB /* fairmount_frame4.png in Copy Help Files */,
+				31B6ECAD0A3DF38D00F531DB /* fairmount_frame5.png in Copy Help Files */,
+				31B6ECAE0A3DF38D00F531DB /* fairmount_frame7.png in Copy Help Files */,
+				31B6ECAF0A3DF38D00F531DB /* fairmount_frame3.png in Copy Help Files */,
+				31B6ECB00A3DF38D00F531DB /* fairmount_frame6.png in Copy Help Files */,
+				31B6ECB10A3DF38D00F531DB /* fairmount_frame2.png in Copy Help Files */,
+				31809C2C0A20F8E20033AE82 /* Help.html in Copy Help Files */,
+			);
+			name = "Copy Help Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		31134FF70A1BF987001BC27C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		311350570A1C03B4001BC27C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		3113505D0A1C041D001BC27C /* Decryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decryption.h; sourceTree = "<group>"; };
+		311350770A1C0686001BC27C /* Decryption.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Decryption.m; sourceTree = SOURCE_ROOT; };
+		3120F1260A1AA1400042B67C /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
+		3120F1270A1AA1400042B67C /* HTTPServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HTTPServer.cpp; sourceTree = "<group>"; };
+		312BF97F0A0D59F900381747 /* socketWrap.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = socketWrap.h; sourceTree = SOURCE_ROOT; };
+		312BF9800A0D59F900381747 /* socketWrap.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = socketWrap.c; sourceTree = SOURCE_ROOT; };
+		313F37A60A1D400A005C4D42 /* Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overlay.h; sourceTree = "<group>"; };
+		313F37A70A1D400A005C4D42 /* Overlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Overlay.m; sourceTree = "<group>"; };
+		313F6FC70A5F6CF2003C414B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		315DE8E511909DF500C41893 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = dsa_keys/dsa_pub.pem; sourceTree = "<group>"; };
+		315DE8FC11909F1900C41893 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Sparkle/Sparkle.framework; sourceTree = SOURCE_ROOT; };
+		31809BDA0A20EFAE0033AE82 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		31809C220A20F89D0033AE82 /* Help.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Help.html; sourceTree = "<group>"; };
+		31A498130A0E7F2E00847D56 /* IFileAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFileAccess.h; sourceTree = "<group>"; };
+		31A4981B0A0E800700847D56 /* CSSFileAccess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSSFileAccess.cpp; sourceTree = "<group>"; };
+		31A498290A0E813300847D56 /* FileSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSize.h; sourceTree = "<group>"; };
+		31A4982A0A0E813300847D56 /* FileSize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FileSize.c; sourceTree = "<group>"; };
+		31A4982D0A0E814900847D56 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		31A498DE0A0E84DA00847D56 /* CachedFileAccess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CachedFileAccess.cpp; sourceTree = "<group>"; };
+		31A49A5B0A0E98C600847D56 /* FileAccess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileAccess.cpp; sourceTree = "<group>"; };
+		31A49B610A126E3E00847D56 /* ListFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFiles.h; sourceTree = "<group>"; };
+		31A49B620A126E3E00847D56 /* ListFiles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListFiles.cpp; sourceTree = "<group>"; };
+		31AE8F270A48A936001F92B4 /* fairmount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fairmount.png; sourceTree = SOURCE_ROOT; };
+		31B6ECA20A3DF38D00F531DB /* fairmount_frame1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fairmount_frame1.png; sourceTree = SOURCE_ROOT; };
+		31B6ECA30A3DF38D00F531DB /* fairmount_frame8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fairmount_frame8.png; sourceTree = SOURCE_ROOT; };
+		31B6ECA40A3DF38D00F531DB /* fairmount_frame4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fairmount_frame4.png; sourceTree = SOURCE_ROOT; };
+		31B6ECA50A3DF38D00F531DB /* fairmount_frame5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fairmount_frame5.png; sourceTree = SOURCE_ROOT; };
+		31B6ECA60A3DF38D00F531DB /* fairmount_frame7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fairmount_frame7.png; sourceTree = SOURCE_ROOT; };
+		31B6ECA70A3DF38D00F531DB /* fairmount_frame3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fairmount_frame3.png; sourceTree = SOURCE_ROOT; };
+		31B6ECA80A3DF38D00F531DB /* fairmount_frame6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fairmount_frame6.png; sourceTree = SOURCE_ROOT; };
+		31B6ECA90A3DF38D00F531DB /* fairmount_frame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fairmount_frame2.png; sourceTree = SOURCE_ROOT; };
+		31D10D3F0A1A7E9B00B773AB /* Fairmount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fairmount.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		31D10D5E0A1A7F0C00B773AB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		31D10D6C0A1A7F2B00B773AB /* MainMenu.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = MainMenu.nib; sourceTree = "<group>"; };
+		31D10D830A1A81B900B773AB /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = /System/Library/Frameworks/DiskArbitration.framework; sourceTree = "<absolute>"; };
+		31F102C50F3263DA00D80F5D /* Fairmount.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Fairmount.h; sourceTree = SOURCE_ROOT; };
+		31F102C60F3263DA00D80F5D /* Fairmount.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = Fairmount.mm; sourceTree = SOURCE_ROOT; };
+		E25B36550A1D783D0005E3CB /* eject.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eject.png; sourceTree = "<group>"; };
+		E25B365D0A1D7AE20005E3CB /* dvd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvd.png; sourceTree = "<group>"; };
+		E25B369B0A1D971F0005E3CB /* fmprog1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fmprog1.png; sourceTree = "<group>"; };
+		E25B369C0A1D971F0005E3CB /* fmprog2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fmprog2.png; sourceTree = "<group>"; };
+		E25B369D0A1D971F0005E3CB /* fmprog3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fmprog3.png; sourceTree = "<group>"; };
+		E25B369E0A1D971F0005E3CB /* fmprog4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fmprog4.png; sourceTree = "<group>"; };
+		E2CA5F870A4876CF00ACAC60 /* fairmount.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = fairmount.icns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31D10D3D0A1A7E9B00B773AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31D10D5F0A1A7F0C00B773AB /* Cocoa.framework in Frameworks */,
+				31D10D840A1A81B900B773AB /* DiskArbitration.framework in Frameworks */,
+				313F6FC80A5F6CF2003C414B /* IOKit.framework in Frameworks */,
+				315DE8FD11909F1900C41893 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* MTD */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				31809C9A0A2115DA0033AE82 /* Resources */,
+				31809C9B0A2115EB0033AE82 /* Frameworks */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = MTD;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				31A4982D0A0E814900847D56 /* Types.h */,
+				31F102C50F3263DA00D80F5D /* Fairmount.h */,
+				31F102C60F3263DA00D80F5D /* Fairmount.mm */,
+				3113505D0A1C041D001BC27C /* Decryption.h */,
+				311350770A1C0686001BC27C /* Decryption.m */,
+				312BF97F0A0D59F900381747 /* socketWrap.h */,
+				312BF9800A0D59F900381747 /* socketWrap.c */,
+				31A498290A0E813300847D56 /* FileSize.h */,
+				31A4982A0A0E813300847D56 /* FileSize.c */,
+				31A498130A0E7F2E00847D56 /* IFileAccess.h */,
+				31A49A5B0A0E98C600847D56 /* FileAccess.cpp */,
+				31A4981B0A0E800700847D56 /* CSSFileAccess.cpp */,
+				31A498DE0A0E84DA00847D56 /* CachedFileAccess.cpp */,
+				31A49B610A126E3E00847D56 /* ListFiles.h */,
+				31A49B620A126E3E00847D56 /* ListFiles.cpp */,
+				3120F1260A1AA1400042B67C /* HTTPServer.h */,
+				3120F1270A1AA1400042B67C /* HTTPServer.cpp */,
+				313F37A60A1D400A005C4D42 /* Overlay.h */,
+				313F37A70A1D400A005C4D42 /* Overlay.m */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31D10D3F0A1A7E9B00B773AB /* Fairmount.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31809C9A0A2115DA0033AE82 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				315DE8E511909DF500C41893 /* dsa_pub.pem */,
+				E2CA5F870A4876CF00ACAC60 /* fairmount.icns */,
+				31AE8F270A48A936001F92B4 /* fairmount.png */,
+				31D10D6C0A1A7F2B00B773AB /* MainMenu.nib */,
+				31809BDA0A20EFAE0033AE82 /* Credits.rtf */,
+				E25B36550A1D783D0005E3CB /* eject.png */,
+				E25B365D0A1D7AE20005E3CB /* dvd.png */,
+				E25B369B0A1D971F0005E3CB /* fmprog1.png */,
+				E25B369C0A1D971F0005E3CB /* fmprog2.png */,
+				E25B369D0A1D971F0005E3CB /* fmprog3.png */,
+				E25B369E0A1D971F0005E3CB /* fmprog4.png */,
+				31134FF70A1BF987001BC27C /* Info.plist */,
+				31809C220A20F89D0033AE82 /* Help.html */,
+				31B6ECA20A3DF38D00F531DB /* fairmount_frame1.png */,
+				31B6ECA30A3DF38D00F531DB /* fairmount_frame8.png */,
+				31B6ECA40A3DF38D00F531DB /* fairmount_frame4.png */,
+				31B6ECA50A3DF38D00F531DB /* fairmount_frame5.png */,
+				31B6ECA60A3DF38D00F531DB /* fairmount_frame7.png */,
+				31B6ECA70A3DF38D00F531DB /* fairmount_frame3.png */,
+				31B6ECA80A3DF38D00F531DB /* fairmount_frame6.png */,
+				31B6ECA90A3DF38D00F531DB /* fairmount_frame2.png */,
+				311350570A1C03B4001BC27C /* LICENSE.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		31809C9B0A2115EB0033AE82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				315DE8FC11909F1900C41893 /* Sparkle.framework */,
+				313F6FC70A5F6CF2003C414B /* IOKit.framework */,
+				31D10D830A1A81B900B773AB /* DiskArbitration.framework */,
+				31D10D5E0A1A7F0C00B773AB /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31D10D3E0A1A7E9B00B773AB /* Fairmount */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31D10D420A1A7E9D00B773AB /* Build configuration list for PBXNativeTarget "Fairmount" */;
+			buildPhases = (
+				31D10D3B0A1A7E9B00B773AB /* Resources */,
+				315DE90611909F4300C41893 /* Copy Private Frameworks */,
+				31809C280A20F8CA0033AE82 /* Copy Help Files */,
+				31D10D3C0A1A7E9B00B773AB /* Sources */,
+				31D10D3D0A1A7E9B00B773AB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fairmount;
+			productName = MacTheDecrypter;
+			productReference = 31D10D3F0A1A7E9B00B773AB /* Fairmount.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "FairMount" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* MTD */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31D10D3E0A1A7E9B00B773AB /* Fairmount */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31D10D3B0A1A7E9B00B773AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31D10D6D0A1A7F2B00B773AB /* MainMenu.nib in Resources */,
+				311350580A1C03B4001BC27C /* LICENSE.txt in Resources */,
+				E25B36560A1D783D0005E3CB /* eject.png in Resources */,
+				E25B365E0A1D7AE20005E3CB /* dvd.png in Resources */,
+				E25B369F0A1D971F0005E3CB /* fmprog1.png in Resources */,
+				E25B36A00A1D971F0005E3CB /* fmprog2.png in Resources */,
+				E25B36A10A1D971F0005E3CB /* fmprog3.png in Resources */,
+				E25B36A20A1D971F0005E3CB /* fmprog4.png in Resources */,
+				31809BDB0A20EFAE0033AE82 /* Credits.rtf in Resources */,
+				E2CA5F880A4876CF00ACAC60 /* fairmount.icns in Resources */,
+				315DE8E611909DF500C41893 /* dsa_pub.pem in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31D10D3C0A1A7E9B00B773AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3120F23A0A1AAE660042B67C /* socketWrap.c in Sources */,
+				3120F23C0A1AAE660042B67C /* FileSize.c in Sources */,
+				3120F23E0A1AAE660042B67C /* FileAccess.cpp in Sources */,
+				3120F23F0A1AAE660042B67C /* CSSFileAccess.cpp in Sources */,
+				3120F2400A1AAE660042B67C /* CachedFileAccess.cpp in Sources */,
+				3120F2420A1AAE660042B67C /* ListFiles.cpp in Sources */,
+				3120F2440A1AAE660042B67C /* HTTPServer.cpp in Sources */,
+				311350780A1C0686001BC27C /* Decryption.m in Sources */,
+				313F37A80A1D400A005C4D42 /* Overlay.m in Sources */,
+				31F102C80F3263DA00D80F5D /* Fairmount.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB928A08733DD80010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		1DEB928B08733DD80010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+		31D10D430A1A7E9D00B773AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Sparkle\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G4;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = 4.0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Fairmount;
+				STRIP_INSTALLED_PRODUCT = NO;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		31D10D440A1A7E9D00B773AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Sparkle\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G4;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_VERSION = 4.0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Fairmount;
+				STRIP_INSTALLED_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "FairMount" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB928A08733DD80010E9CD /* Debug */,
+				1DEB928B08733DD80010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31D10D420A1A7E9D00B773AB /* Build configuration list for PBXNativeTarget "Fairmount" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31D10D430A1A7E9D00B773AB /* Debug */,
+				31D10D440A1A7E9D00B773AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
