@@ -246,7 +246,7 @@ struct _HTTPServer
 };
 
 //----------------------------------------------------------------------------------
-typedef struct Connection
+struct Connection
 {
 	IFileAccess *dw;
 	sw_socket *s;

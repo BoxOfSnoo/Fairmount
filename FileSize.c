@@ -8,6 +8,7 @@
 #include <sys/errno.h>
 #include <sys/disk.h>
 #include <string.h>
+#include <unistd.h>
 
 //----------------------------------------------------------------------------------
 int64 FileSize(const char *path, int *blockSize, int64 *blockCount)

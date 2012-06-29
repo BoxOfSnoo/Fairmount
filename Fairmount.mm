@@ -449,9 +449,9 @@ error:
 	NSString *folder2 = [folder1 stringByDeletingLastPathComponent];
 	
 	NSFileManager *fm = [NSFileManager defaultManager];
-	[fm createDirectoryAtPath:folder2 attributes:nil];
-	[fm createDirectoryAtPath:folder1 attributes:nil];
-	[fm copyPath:libPath toPath:installPath handler:nil];
+	[fm createDirectoryAtPath:folder2 withIntermediateDirectories:NO attributes:nil error:NULL];
+	[fm createDirectoryAtPath:folder1 withIntermediateDirectories:NO attributes:nil error:NULL];
+	[fm copyItemAtPath:libPath toPath:installPath error:NULL];
 }
 
 //----------------------------------------------------------------------------------
@@ -488,7 +488,7 @@ error:
 		if (r == 1)
 		{
 			NSOpenPanel *op = [NSOpenPanel openPanel];
-			[op setRequiredFileType:@"app"];
+            [op setAllowedFileTypes:[NSArray arrayWithObject:@"app"]];
 			int opr = [op runModal];
 			if (opr == NSFileHandlingPanelOKButton)
 			{
