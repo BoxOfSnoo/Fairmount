@@ -13,6 +13,16 @@ Fairmount was originally developed by Metakine, but it appears to have
 vanished from their web site. However, it was released under the GPL,
 so others may continue to develop it.
 
+## Getting Binaries
+
+For now, a zip file of the .app for OS X 10.6 and later (Intel only)
+is located at: <https://github.com/pmetzger/Fairmount/downloads>
+
+The version number has been bumped to 1.1.1, but other than a fresh
+compile and 64 bit binaries, there's no new functionality.
+
+Automatic updates are intentionally broken.
+
 ## How To Build
 
 Fairmount uses the "Sparkle" framework for automatic updates. Said
