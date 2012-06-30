@@ -29,7 +29,7 @@
 	<key>LSEnvironment</key>
 	<dict>
 		<key>MinimumSystemVersion</key>
-		<string>10.4.0</string>
+		<string>10.6.0</string>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright Metakine, 2006-2010, distributed under GPL.</string>
@@ -40,7 +40,7 @@
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 	<key>SUFeedURL</key>
-	<string>http://www.metakine.com/sparkle/fairmount/checkupdate.php</string>
+	<string>http://www.example.com/sparkle/fairmount/checkupdate.php</string>
 	<key>SUEnableSystemProfiling</key>
 	<true/>
 </dict>
