@@ -18,17 +18,21 @@
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<hr />
 	<p><b><h3>Description</h3></b></p>
-	
-	<p>
-		Fairmount is a tool that allows decryption of DVD content on the fly for 
-		a convenient access.  Fairmount does not perform the actual decryption, 
-		it simply forwards the data to <a href="http://www.videolan.org"/>VLC Media 
-		Player</a> which is used for decryption - thus, 
-		<a href="http://www.videolan.org">VLC Media Player</a> must be installed
-		for Fairmount to work.
-	</p>
-	
-	
+
+    <p>
+        Fairmount is a tool that allows you to view the contents of a
+        DVD as though they were normal files on a removable disk. Most
+        DVDs are encrypted, and Fairmount cannot decrypt such DVDs
+        directly, but it instead uses freely available software
+        provided by
+        <a href="http://www.videolan.org"/>VideoLan</a>
+        to read the files.
+        Thus, this software, which may be found at
+        <a href="http://download.videolan.org/libdvdcss/last/macosx/">http://download.videolan.org/libdvdcss/last/macosx/</a>,
+        must be installed for Fairmount to work.
+    </p>
+
+
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<p><b><h3>Usage</h3></b></p>
 	
@@ -134,8 +138,7 @@
 		
 		<li><i>Decryption.[h,m]</i>:<br />
 			Provides the dvdcss API. <b>dvdcss is not included with Fairmount</b>,
-			it is rather loaded from the user's disk by searching for VLC's
-			bundle.
+			it is rather loaded from the user's disk and must be separately installed.
 		</li>
 		
 		<li><i>Fairmount.[h,mm]</i>:<br />

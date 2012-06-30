@@ -7,7 +7,7 @@ machine as though it was a normal file system, allowing the user to
 examine the contents.
 
 It does not itself supply DVD reading code, but instead requires
-that VLC's DVD library be installed separately.
+that a DVD library from videolan.org be installed separately.
 
 Fairmount was originally developed by Metakine, but it appears to have
 vanished from their web site. However, it was released under the GPL,
@@ -18,14 +18,21 @@ so others may continue to develop it.
 For now, a zip file of the .app for OS X 10.6 and later (Intel only)
 is located at: <https://github.com/pmetzger/Fairmount/downloads>
 
-You must also get a copy of the file:
-<http://download.videolan.org/libdvdcss/last/macosx/libdvdcss.2.dylib>
-and install it in `~/Library/Application\ Support/libdvdcss.dylib`
+You must also install the package found at:
+<http://download.videolan.org/libdvdcss/last/macosx/libdvdcss.pkg> --
+this will place the file libdvdcss.2.dylib into /usr/lib/ where the
+program will find it.
 
-Eventually I hope to have this handled somewhat more cleanly.
+If you don't install the library, the program will prompt you to do so.
 
-The version number has been bumped to 1.1.1, but other than a fresh
-compile and 64 bit binaries, there's no new functionality.
+\[In the unlikely event you want to use with a different version
+of the library, the program first searches in
+`~/Library/Application\ Support/Fairmount/libdvdcss.dylib` and then in
+`~/Library/Application\ Support/Fairmount/libdvdcss.2.dylib` \]
+
+The version number has been bumped to 1.1.2, but other than a few
+fixes (including finding the needed library in a new place), there's
+no new functionality.
 
 Automatic updates are intentionally broken as there is not yet
 anywhere to update from.
@@ -55,7 +62,7 @@ things will build at all.
 
 ## Source files overview
 
-This overview is taken from the original help.html file included with
+This overview is taken from the original Help.html file included with
 the project resources.
 
 <ul>
@@ -65,8 +72,7 @@ the project resources.
 
     <li><i>Decryption.[h,m]</i>:<br/>
         Provides the dvdcss API. <b>dvdcss is not included with Fairmount</b>,
-        it is rather loaded from the user's disk by searching for VLC's
-        bundle.
+        it is rather loaded from the user's disk and must be separately installed.
     </li>
 
     <li><i>Fairmount.[h,mm]</i>:<br/>
