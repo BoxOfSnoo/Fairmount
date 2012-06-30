@@ -6,8 +6,8 @@ It is a program which mounts the contents of a DVD on a Mac OS X
 machine as though it was a normal file system, allowing the user to
 examine the contents.
 
-It does not itself supply DVD decryption code, but instead requires
-that VLC be installed and makes use of the libraries provided by it.
+It does not itself supply DVD reading code, but instead requires
+that VLC's DVD library be installed separately.
 
 Fairmount was originally developed by Metakine, but it appears to have
 vanished from their web site. However, it was released under the GPL,
@@ -18,10 +18,17 @@ so others may continue to develop it.
 For now, a zip file of the .app for OS X 10.6 and later (Intel only)
 is located at: <https://github.com/pmetzger/Fairmount/downloads>
 
+You must also get a copy of the file:
+<http://download.videolan.org/libdvdcss/last/macosx/libdvdcss.2.dylib>
+and install it in `~/Library/Application\ Support/libdvdcss.dylib`
+
+Eventually I hope to have this handled somewhat more cleanly.
+
 The version number has been bumped to 1.1.1, but other than a fresh
 compile and 64 bit binaries, there's no new functionality.
 
-Automatic updates are intentionally broken.
+Automatic updates are intentionally broken as there is not yet
+anywhere to update from.
 
 ## How To Build
 
