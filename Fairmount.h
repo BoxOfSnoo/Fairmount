@@ -5,17 +5,17 @@
 #include "Types.h"
 #include "HTTPServer.h"
 
-//----------------------------------------------------------------------------------
+//-------------------------------------------------------------------------
 @interface DVDServer : NSObject
 {
-	DASessionRef	mDASession;
-	DADiskRef		mOriginalDisk;
-	DADiskRef		mDecryptedDisk;
-	HTTPServer		*mHTTPServer;
-	BOOL			mRequestingService, mCallbackCalled;
-	NSString		*mStatus;
-	NSTableView		*mTableView;
-	int				mErrCode;
+    DASessionRef    mDASession;
+    DADiskRef       mOriginalDisk;
+    DADiskRef       mDecryptedDisk;
+    HTTPServer      *mHTTPServer;
+    BOOL            mRequestingService, mCallbackCalled;
+    NSString        *mStatus;
+    NSTableView     *mTableView;
+    int             mErrCode;
 }
 - (id) initWithSession:(DASessionRef)session tableView:(NSTableView*)tableView;
 
@@ -33,15 +33,15 @@
 - (BOOL) stopServingAndEject:(BOOL)eject;
 @end
 
-//----------------------------------------------------------------------------------
+//-------------------------------------------------------------------------
 @interface Fairmount : NSObject
 {
-	IBOutlet NSTableView	*mTableView;
+    IBOutlet NSTableView    *mTableView;
 
-	NSMutableArray			*mServers;
-	DASessionRef			mDASession;
-	
-	IBOutlet NSWindow		*mVLCWindow;
+    NSMutableArray          *mServers;
+    DASessionRef            mDASession;
+
+    IBOutlet NSWindow       *mVLCWindow;
 }
 
 - (void) downloadVLC:(id)sender;

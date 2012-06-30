@@ -2,46 +2,46 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleGetInfoString</key>
-	<string>${APP_VERSION}</string>
-	<key>CFBundleHelpBookFolder</key>
-	<string>Help</string>
-	<key>CFBundleHelpBookName</key>
-	<string>Fairmount help</string>
-	<key>CFBundleIconFile</key>
-	<string>fairmount</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.metakine.fairmount</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>${APP_VERSION}</string>
-	<key>CFBundleSignature</key>
-	<string>MKFM</string>
-	<key>CFBundleVersion</key>
-	<string>${APP_VERSION}</string>
-	<key>LSEnvironment</key>
-	<dict>
-		<key>MinimumSystemVersion</key>
-		<string>10.6.0</string>
-	</dict>
-	<key>LSMultipleInstancesProhibited</key>
-	<true/>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright Metakine, 2006-2010, distributed under GPL.</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
-	<key>SUEnableSystemProfiling</key>
-	<true/>
-	<key>SUFeedURL</key>
-	<string>http://www.example.com/sparkle/fairmount/checkupdate.php</string>
-	<key>SUPublicDSAKeyFile</key>
-	<string>dsa_pub.pem</string>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>English</string>
+    <key>CFBundleExecutable</key>
+    <string>${EXECUTABLE_NAME}</string>
+    <key>CFBundleGetInfoString</key>
+    <string>${APP_VERSION}</string>
+    <key>CFBundleHelpBookFolder</key>
+    <string>Help</string>
+    <key>CFBundleHelpBookName</key>
+    <string>Fairmount help</string>
+    <key>CFBundleIconFile</key>
+    <string>fairmount</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.metakine.fairmount</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>${APP_VERSION}</string>
+    <key>CFBundleSignature</key>
+    <string>MKFM</string>
+    <key>CFBundleVersion</key>
+    <string>${APP_VERSION}</string>
+    <key>LSEnvironment</key>
+    <dict>
+        <key>MinimumSystemVersion</key>
+        <string>10.6.0</string>
+    </dict>
+    <key>LSMultipleInstancesProhibited</key>
+    <true/>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright Metakine, 2006-2010, distributed under GPL.</string>
+    <key>NSMainNibFile</key>
+    <string>MainMenu</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>SUEnableSystemProfiling</key>
+    <true/>
+    <key>SUFeedURL</key>
+    <string>http://www.example.com/sparkle/fairmount/checkupdate.php</string>
+    <key>SUPublicDSAKeyFile</key>
+    <string>dsa_pub.pem</string>
 </dict>
 </plist>
