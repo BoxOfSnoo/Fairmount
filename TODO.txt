@@ -2,7 +2,8 @@ Remove the references to VLC 32 vs. 64 bit versions (see MainMenu.nib),
 presuming we verify that everything is now happily 64 bit of course.
 
 The "Check for updates..." functionality was temporarily removed, at
-least until there is somewhere to get updates from. Once there is,
-it should be restored.
+least until there is somewhere to get updates from, by setting the URL
+for updates in Info.plist to point to "example.com". Once there is a
+location, and a signing key etc, the functionality should be restored.
 
 Testing under Mountain Lion would probably be a good idea.
