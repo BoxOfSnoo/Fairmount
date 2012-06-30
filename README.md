@@ -52,7 +52,7 @@ the project resources.
         bundle.
     </li>
 
-    <li><i>Fairmount.[h,m]</i>:<br/>
+    <li><i>Fairmount.[h,mm]</i>:<br/>
         This contains the main classes for Fairmount, the Fairmount class
         which registers itself with the Disk Arbitration framework to
         receive notifications of disks appearing and disappearing, and the
