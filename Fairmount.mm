@@ -16,6 +16,8 @@
 
 #define STATUS(args...) do { LOG(args); [self setStatus:[NSString stringWithFormat:args]]; } while(0)
 
+#define INSTALL_PATH [@"~/Library/Application Support/Fairmount/libdvdcss.dylib" stringByExpandingTildeInPath]
+
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
 static void sigpipeHangler(int i) { }
@@ -440,77 +442,53 @@ error:
 	[super dealloc];
 }
 
-#define INSTALL_PATH [@"~/Library/Application Support/Fairmount/libdvdcss.dylib" stringByExpandingTildeInPath]
+//----------------------------------------------------------------------------------
 
-- (void) installLibFrom:(NSString*)libPath
+- (void) downloadVLC:(id)sender
 {
-	NSString *installPath = INSTALL_PATH;
-	NSString *folder1 = [installPath stringByDeletingLastPathComponent];
-	NSString *folder2 = [folder1 stringByDeletingLastPathComponent];
-	
-	NSFileManager *fm = [NSFileManager defaultManager];
-	[fm createDirectoryAtPath:folder2 withIntermediateDirectories:NO attributes:nil error:NULL];
-	[fm createDirectoryAtPath:folder1 withIntermediateDirectories:NO attributes:nil error:NULL];
-	[fm copyItemAtPath:libPath toPath:installPath error:NULL];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://download.videolan.org/libdvdcss/last/macosx/libdvdcss.pkg"]];
 }
 
-//----------------------------------------------------------------------------------
-- (void) downloadVLC:(id)sender { [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.videolan.org/"]]; }
-- (void) browseVLC:(id)sender { [NSApp stopModalWithCode:1]; }
-- (void) retryVLC:(id)sender { [NSApp stopModalWithCode:2]; }
+- (void) retryVLC:(id)sender { [NSApp stopModal]; }
 
 //----------------------------------------------------------------------------------
 - (void) awakeFromNib
 {
-	NSString *tryPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:@"org.videolan.vlc"];
-	
-	NSString *installPath = INSTALL_PATH;
-	int ret = InitDecryption(installPath, nil);
-	if (ret == 0)
-	{
-		NSLog(@"found dvdcss in app support folder");
-	}
-	else while(1)
-	{
-		NSString *foundPath;
-		ret = InitDecryption(tryPath, &foundPath);
-		if (ret == 0)
-		{
-			[self installLibFrom:foundPath];
-			NSLog(@"found dvdcss in vlc bundle");
-			break;
-		}
-		
-		// ask user
-		int r = [NSApp runModalForWindow:mVLCWindow];
-		[mVLCWindow orderOut:nil];
-		
-		if (r == 1)
-		{
-			NSOpenPanel *op = [NSOpenPanel openPanel];
-            [op setAllowedFileTypes:[NSArray arrayWithObject:@"app"]];
-			int opr = [op runModal];
-			if (opr == NSFileHandlingPanelOKButton)
-			{
-				tryPath = [op filename];
-			}
-		}
-		
-		if (r == 2)
-		{
-			tryPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:@"org.videolan.vlc"];
-		}
-	}
+    NSArray *libPaths = [NSArray arrayWithObjects:
+                             INSTALL_PATH,
+                             [@"~/Library/Application Support/Fairmount/libdvdcss.2.dylib" stringByExpandingTildeInPath],
+                             @"/usr/lib/libdvdcss.2.dylib",
+                             nil];
+    BOOL found;
 
-	DASessionScheduleWithRunLoop( mDASession, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode );
+    while (1) {
+        found = NO;
 
-	DARegisterDiskAppearedCallback(		mDASession, nil,
-										DADiskAppearedCb, self);
-									
-	DARegisterDiskDisappearedCallback(	mDASession, nil,
-										DADiskDisappearedCb, self);	
-										
-	[self autoReloadTableView];
+        for (NSString *path in libPaths) {
+            if (InitDecryption(path)) {
+                NSLog(@"found dvdcss in %@", path);
+                found = YES;
+                break;
+            }
+        }
+
+        if (found) break;
+
+        // tell user to install and retry
+        [NSApp runModalForWindow:mVLCWindow];
+        [mVLCWindow orderOut:nil];
+
+    }
+
+    DASessionScheduleWithRunLoop(mDASession, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+
+    DARegisterDiskAppearedCallback(mDASession, nil,
+                                   DADiskAppearedCb, self);
+
+    DARegisterDiskDisappearedCallback(mDASession, nil,
+                                      DADiskDisappearedCb, self);
+
+    [self autoReloadTableView];
 }
 
 //----------------------------------------------------------------------------------

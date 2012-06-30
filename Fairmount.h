@@ -45,7 +45,6 @@
 }
 
 - (void) downloadVLC:(id)sender;
-- (void) browseVLC:(id)sender;
 - (void) retryVLC:(id)sender;
 
 - (void) diskAppearedCb:(DADiskRef)disk;

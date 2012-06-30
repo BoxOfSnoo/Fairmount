@@ -1,12 +1,13 @@
 
 
-#include "Decryption.h"
 #include <dlfcn.h>
 #include <mach-o/fat.h>
 #include <mach-o/loader.h>
 #include <architecture/byte_order.h>
 
 #import <Cocoa/Cocoa.h>
+
+#include "Decryption.h"
 
 /*
 	Fairmount doesn't include any decryption functions by itself.
@@ -26,7 +27,7 @@ static int LoadLib(const char *path)
 	if (!dvdcss_library)
 	{
 		const char *error = dlerror();
-		if (error) printf("dlerror: %s\n", error);
+		if (error) fprintf(stderr, "dlerror: %s\n", error);
 		return -1;
 	}
     dvdcss_open = (dvdcss_t (*)(char*))					dlsym(dvdcss_library, "dvdcss_open");
@@ -39,69 +40,29 @@ static int LoadLib(const char *path)
 		dlclose(dvdcss_library);
 		return -1;
 	}
-	
+
 	fprintf(stderr, "loaded dvdcss from %s\n", path);
-	return 0;	
+	return 0;
 }
 
 //----------------------------------------------------------------------------------
-static int ParseDirectory(NSString *path, NSFileManager *fm, NSString **libpath)
+BOOL InitDecryption(NSString *path)
 {
-	BOOL isDir;
-	BOOL exists = [fm fileExistsAtPath:path isDirectory:&isDir];
-	
-	if (!exists) return -1;
-	if (!isDir)
-	{
-		if ([path rangeOfString:@"dvdcss"].location != NSNotFound)
-		{
-			const char *fs = [path fileSystemRepresentation];
-			int ret = LoadLib(fs);
-			if (ret == 0)
-			{
-				if (libpath) *libpath = path;
-				return 0;
-			}
-		}
-		else
-			return -1;
-	}
+    NSFileManager *fm;
+    BOOL isDir, exists;
 
-	NSArray *a = [fm subpathsAtPath:path];
-	int c = [a count], i;
-	for (i = 0; i < c; i++)
-	{
-		NSString *cur = [path stringByAppendingPathComponent:[a objectAtIndex:i]];
-		exists = [fm fileExistsAtPath:cur isDirectory:&isDir];
-		if (!exists) continue;
-		
-		if (isDir)
-		{
-			int ret = ParseDirectory(cur, fm, libpath);
-			if (ret == 0) return 0;
-		}
-		else if ([cur rangeOfString:@"dvdcss"].location != NSNotFound)
-		{
-			const char *fs = [cur fileSystemRepresentation];
-			int ret = LoadLib(fs);
-			if (ret == 0)
-			{
-				if (libpath) *libpath = cur;
-				return 0;
-			}
-		}
-	}
-	
-	return -1;
-}
+    fm = [NSFileManager defaultManager];
+    if (!fm) return NO;
 
-//----------------------------------------------------------------------------------
-int InitDecryption(NSString *tryPath, NSString **libpath)
-{
-	if (libpath) *libpath = nil;
-	
-	NSFileManager *fm = [NSFileManager defaultManager];
-	if (!fm) return -1;
-	
-	return ParseDirectory(tryPath, fm, libpath);
+    exists = [fm fileExistsAtPath:path isDirectory:&isDir];
+
+    if (!exists || isDir) return NO;
+
+    if ([path rangeOfString:@"dvdcss"].location == NSNotFound)
+      return NO;
+
+    if (LoadLib([path fileSystemRepresentation]) == 0)
+	  return YES;
+	else
+	  return NO;
 }
