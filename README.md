@@ -54,6 +54,12 @@ Therefore:
 
 Then tell XCode to build the project.
 
+Alternatively, from the top level of the sources, you can run
+
+    sh makerelease.sh
+
+and the script will build everything, including a release .dmg file.
+
 **Note**: The sources contain a `dsa_keys/dsa_pub.pem` file,
 apparently needed by Sparkle. It was grabbed from an old Fairmount
 binary. This will need to get replaced in order for Sparkle to be
