@@ -12,5 +12,5 @@ xcuserdata/
 
 # Misc
 build/
-PACKAGE/
-
+IMAGE/
+*.dmg
