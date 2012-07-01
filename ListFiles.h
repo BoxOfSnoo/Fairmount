@@ -9,9 +9,9 @@
 
 typedef struct
 {
-	std::string name;
-	int64 start;
-	int64 size;
+    std::string name;
+    int64 start;
+    int64 size;
 } FMFileInfo;
 
 std::vector<FMFileInfo> ListFiles(const char *videoTS);

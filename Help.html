@@ -1,206 +1,209 @@
 <html>
 <head>
-	<title>Fairmount help</title>
-	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-	<meta name="AppleTitle" content="Fairmount help">
+    <title>Fairmount help</title>
+    <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+    <meta name="AppleTitle" content="Fairmount help">
 </head>
-	
+
 <body bgcolor="#ffffff">
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<p><b><h1>
-		<img	src="fairmount.png"
-				alt="Fairmount icon"/>
-		Fairmount help
-	</h1></b></p>
-	
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<hr />
-	<p><b><h3>Description</h3></b></p>
-	
-	<p>
-		Fairmount is a tool that allows decryption of DVD content on the fly for 
-		a convenient access.  Fairmount does not perform the actual decryption, 
-		it simply forwards the data to <a href="http://www.videolan.org"/>VLC Media 
-		Player</a> which is used for decryption - thus, 
-		<a href="http://www.videolan.org">VLC Media Player</a> must be installed
-		for Fairmount to work.
-	</p>
-	
-	
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<p><b><h3>Usage</h3></b></p>
-	
-	<p>
-		Using Fairmount is easy. Just start the application, and it will
-		do it's magic automatically, replacing the original DVD on the desk
-		by a decrypted disc image of this DVD.
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <p><b><h1>
+        <img    src="fairmount.png"
+                alt="Fairmount icon"/>
+        Fairmount help
+    </h1></b></p>
 
-		To eject the original disc, simply eject the decrypted image.
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <hr />
+    <p><b><h3>Description</h3></b></p>
 
-		Upon quitting, the orignal disc will reappear.
-	</p>
-	
-	<div align="center">
-		<img id='fairmountanim' src="fairmount_frame1.png" alt="Fairmount in action" />
-	</div>
+    <p>
+        Fairmount is a tool that allows you to view the contents of a
+        DVD as though they were normal files on a removable disk. Most
+        DVDs are encrypted, and Fairmount cannot decrypt such DVDs
+        directly, but it instead uses freely available software
+        provided by
+        <a href="http://www.videolan.org"/>VideoLAN</a>
+        to read the files.
+        Thus, this software, which may be found at
+        <a href="http://download.videolan.org/libdvdcss/last/macosx/">http://download.videolan.org/libdvdcss/last/macosx/</a>,
+        must be installed for Fairmount to work.
+    </p>
 
-	<script type="text/javascript">
-		function AnimFairmount()
-		{
-			document.getElementById('fairmountanim').src = "fairmount_frame" + frame + ".png";
-			
-			if (frame == 1) timeout = 1500;
-			else if (frame == 2) timeout = 2000;
-			else if (frame == 7) timeout = 1000;
-			else if (frame == 8) timeout = 4000;
-			else timeout = 500;
-			
-			setTimeout(AnimFairmount, timeout);
-			frame = frame + 1;
-			if (frame > 8) frame = 1;
-		}
 
-		frame = 1;
-		setTimeout(AnimFairmount, 1000);
-	</script>
-	
-	<p>
-		Once Fairmount is launched, making a backup of a DVD is as simple as drag
-		and dropping its VIDEO_TS folder somewhere on your hard disk. The resulting
-		copy will be decrypted as it is copied and will be ready for archival.
-	</p>
-	
-	<p>
-		Fairmount also enables application such as
-		<a href="http://www.metakine.com/products/dvdremaster/">DVDRemaster</a> to
-		work directly on an encrypted DVD to make a copy that can be burnt on another
-		DVD or that can be played on a video iPod.
-	</p>
-	
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<p><b><h3>Known problems</h3></b></p>
-	
-	<p>
-		Fairmount adds a bit of latency to data access (the bandwidth - the speed
-		at which data is accessed - is however nearly unaffected). Some applications
-		such as Apple DVD Player that expects low latency access might suffer from hiccups.
-		When experiencing these hiccups, you can simply quit Fairmount and use the DVD normally.
-	</p>
-	
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<hr />
-	<p><b><h3>Technical information</h3></b></p>
-	
-	<p>
-		Fairmount source code is available and released under <a href="http://www.gnu.org/copyleft/gpl.html">
-		GPL license</a>. For the developers taking a look at the source, here is some useful
-		information:
-	</p>
-	
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<p><b>Basic Sequence of Operations</b></p>
-	
-	<p>
-		Fairmount manages discs inserted by the user, and
-		mount an identic disc image which files are decrypted seemlessly.
-	</p>
-	
-	<ul>
-		<li>A disc is inserted by the user.</li>	
-		<li>Fairmount receives a notification about the new disc.</li>
-		<li>If the disc is a video dvd, the original disc is unmounted.</li>
-		<li>It then starts a local web server (which is only accessible
-		by the local host), to serve the decrypted image.</li>
-		<li>The decrypted image is then mounted using Apple's tool (hdiutil).</li>
-		<li>When the user ejects the image,
-		the web server is stopped, and the original disc is ejected.</li>
-	</ul>
-	
-	<p>
-		By this process, Fairmount allows you to use an encrypted dvd as if 
-		it was decrypted.
-	</p>
-	
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<p><b>Sources files overview</b></p>
-	
-	<ul>
-		<li><i>Types.h</i>:<br />
-			Specifies some data types used throughout the code.
-		</li>
-		
-		<li><i>Decryption.[h,m]</i>:<br />
-			Provides the dvdcss API. <b>dvdcss is not included with Fairmount</b>,
-			it is rather loaded from the user's disk by searching for VLC's
-			bundle.
-		</li>
-		
-		<li><i>Fairmount.[h,m]</i>:<br />
-			This contains the main classes for Fairmount, the Fairmount class
-			which registers itself with the Disk Arbitration framework to
-			receive notifications of disks appearing and disappearing, and the
-			DVDServer class which do the heavywork and contains the web server object.
-		</li>
-		
-		<li><i>Overlay.[h,m]</i>:<br />
-			Contains the code neccessary to show the progress's overlay Apple's style.
-		</li>
-		
-		<li><i>socketWrap.[h,c]</i>:<br />
-			Provides a simple API to hide socket usage details.
-		</li>
-		
-		<li><i>FileSize.[h,c]</i>:<br />
-			Function that provides the byte size of block devices.
-		</li>
-		
-		<li><i>ListFiles.[h,cpp]</i>:<br />
-			Provides the file's list (size, start and end) of the ISO9660 filesystem
-			of the dvd. Used by CSSFileAccess to ensure decryption is only applied
-			on VOB files.
-		</li>
-		
-		<li><i>HTTPServer.[h,cpp]</i>:<br />
-			A quite minimal web server able to serve large files.
-		</li>
-		
-		<li><i>IFileAccess.h</i>:<br />
-			Provides an interface to all data access done by the web server.
-			By using this interfaces, it is easy to test different methods of
-			accessing data.
-		</li>
-		
-		<li><i>FileAccess.cpp</i>:<br />
-			A dumb file access module used for debugging purpose.
-		</li>
-		
-		<li><i>CSSFileAccess.cpp</i>:<br />
-			This module does the decryption on the VOB files, and slices requests
-			on VOB boundaries.
-		</li>
-		
-		<li><i>CachedFileAccess.cpp</i>:<br />
-			This module works on top of another to provide threaded read-ahead cache.
-		</li>
-	</ul>
-	
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<p><b>Working on Fairmount</b></p>
-	
-	<p>
-		If you want to work on Fairmount, the first thing you should do is set
-		the following environment variable for the executable (this is saved per user
-		in XCode): name:"DYLD_INSERT_LIBRARIES" value:"/usr/lib/libMallocDebug.A.dylib".
-		This ensures memory bugs will be found sooner.
-	</p>
-	
-	<p>
-		Bug fixes, new features, comments, better documentation, etc,
-		are all welcomed and should be sent to fairmount-devel@metakine.com for integration.
-	</p>
-	
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <p><b><h3>Usage</h3></b></p>
+
+    <p>
+        Using Fairmount is easy. Just start the application, and it will
+        do it's magic automatically, replacing the original DVD on the desk
+        by a decrypted disc image of this DVD.
+
+        To eject the original disc, simply eject the decrypted image.
+
+        Upon quitting, the orignal disc will reappear.
+    </p>
+
+    <div align="center">
+        <img id='fairmountanim' src="fairmount_frame1.png" alt="Fairmount in action" />
+    </div>
+
+    <script type="text/javascript">
+        function AnimFairmount()
+        {
+            document.getElementById('fairmountanim').src = "fairmount_frame" + frame + ".png";
+
+            if (frame == 1) timeout = 1500;
+            else if (frame == 2) timeout = 2000;
+            else if (frame == 7) timeout = 1000;
+            else if (frame == 8) timeout = 4000;
+            else timeout = 500;
+
+            setTimeout(AnimFairmount, timeout);
+            frame = frame + 1;
+            if (frame > 8) frame = 1;
+        }
+
+        frame = 1;
+        setTimeout(AnimFairmount, 1000);
+    </script>
+
+    <p>
+        Once Fairmount is launched, making a backup of a DVD is as simple as drag
+        and dropping its VIDEO_TS folder somewhere on your hard disk. The resulting
+        copy will be decrypted as it is copied and will be ready for archival.
+    </p>
+
+    <p>
+        Fairmount also enables application such as
+        <a href="http://www.metakine.com/products/dvdremaster/">DVDRemaster</a> to
+        work directly on an encrypted DVD to make a copy that can be burnt on another
+        DVD or that can be played on a video iPod.
+    </p>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <p><b><h3>Known problems</h3></b></p>
+
+    <p>
+        Fairmount adds a bit of latency to data access (the bandwidth - the speed
+        at which data is accessed - is however nearly unaffected). Some applications
+        such as Apple DVD Player that expects low latency access might suffer from hiccups.
+        When experiencing these hiccups, you can simply quit Fairmount and use the DVD normally.
+    </p>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <hr />
+    <p><b><h3>Technical information</h3></b></p>
+
+    <p>
+        Fairmount source code is available and released under <a href="http://www.gnu.org/copyleft/gpl.html">
+        GPL license</a>. For the developers taking a look at the source, here is some useful
+        information:
+    </p>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <p><b>Basic Sequence of Operations</b></p>
+
+    <p>
+        Fairmount manages discs inserted by the user, and
+        mount an identic disc image which files are decrypted seemlessly.
+    </p>
+
+    <ul>
+        <li>A disc is inserted by the user.</li>
+        <li>Fairmount receives a notification about the new disc.</li>
+        <li>If the disc is a video dvd, the original disc is unmounted.</li>
+        <li>It then starts a local web server (which is only accessible
+        by the local host), to serve the decrypted image.</li>
+        <li>The decrypted image is then mounted using Apple's tool (hdiutil).</li>
+        <li>When the user ejects the image,
+        the web server is stopped, and the original disc is ejected.</li>
+    </ul>
+
+    <p>
+        By this process, Fairmount allows you to use an encrypted dvd as if
+        it was decrypted.
+    </p>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <p><b>Sources files overview</b></p>
+
+    <ul>
+        <li><i>Types.h</i>:<br />
+            Specifies some data types used throughout the code.
+        </li>
+
+        <li><i>Decryption.[h,m]</i>:<br />
+            Provides the dvdcss API. <b>dvdcss is not included with Fairmount</b>,
+            it is rather loaded from the user's disk and must be separately installed.
+        </li>
+
+        <li><i>Fairmount.[h,mm]</i>:<br />
+            This contains the main classes for Fairmount, the Fairmount class
+            which registers itself with the Disk Arbitration framework to
+            receive notifications of disks appearing and disappearing, and the
+            DVDServer class which do the heavywork and contains the web server object.
+        </li>
+
+        <li><i>Overlay.[h,m]</i>:<br />
+            Contains the code neccessary to show the progress's overlay Apple's style.
+        </li>
+
+        <li><i>socketWrap.[h,c]</i>:<br />
+            Provides a simple API to hide socket usage details.
+        </li>
+
+        <li><i>FileSize.[h,c]</i>:<br />
+            Function that provides the byte size of block devices.
+        </li>
+
+        <li><i>ListFiles.[h,cpp]</i>:<br />
+            Provides the file's list (size, start and end) of the ISO9660 filesystem
+            of the dvd. Used by CSSFileAccess to ensure decryption is only applied
+            on VOB files.
+        </li>
+
+        <li><i>HTTPServer.[h,cpp]</i>:<br />
+            A quite minimal web server able to serve large files.
+        </li>
+
+        <li><i>IFileAccess.h</i>:<br />
+            Provides an interface to all data access done by the web server.
+            By using this interfaces, it is easy to test different methods of
+            accessing data.
+        </li>
+
+        <li><i>FileAccess.cpp</i>:<br />
+            A dumb file access module used for debugging purpose.
+        </li>
+
+        <li><i>CSSFileAccess.cpp</i>:<br />
+            This module does the decryption on the VOB files, and slices requests
+            on VOB boundaries.
+        </li>
+
+        <li><i>CachedFileAccess.cpp</i>:<br />
+            This module works on top of another to provide threaded read-ahead cache.
+        </li>
+    </ul>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <p><b>Working on Fairmount</b></p>
+
+    <p>
+        If you want to work on Fairmount, the first thing you should do is set
+        the following environment variable for the executable (this is saved per user
+        in XCode): name:"DYLD_INSERT_LIBRARIES" value:"/usr/lib/libMallocDebug.A.dylib".
+        This ensures memory bugs will be found sooner.
+    </p>
+
+    <!-- <p>
+        Bug fixes, new features, comments, better documentation, etc,
+        are all welcomed and should be sent to fairmount-devel@metakine.com for integration.
+    </p> -->
+
 </body>
 </html>
