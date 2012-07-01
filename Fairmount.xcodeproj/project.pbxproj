@@ -342,7 +342,7 @@
 		31D10D430A1A7E9D00B773AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APP_VERSION = 1.1.2;
+				APP_VERSION = 1.1.3;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -374,7 +374,7 @@
 		31D10D440A1A7E9D00B773AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APP_VERSION = 1.1.2;
+				APP_VERSION = 1.1.3;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
