@@ -1,0 +1,16 @@
+# Mac OS X
+.DS_Store
+
+# XCode
+project.xcworkspace/
+xcuserdata/
+
+# Emacs
+*~
+\#*#
+.#*
+
+# Misc
+build/
+IMAGE/
+*.dmg

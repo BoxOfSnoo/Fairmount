@@ -4,7 +4,7 @@
 
 @interface Overlay : NSWindow
 {
-	NSImageView *mImageView;
+    NSImageView *mImageView;
 }
 - (void) setStep:(int)step;
 @end

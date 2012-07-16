@@ -19,8 +19,8 @@ typedef struct dvdcss_s* dvdcss_t;
 #ifdef __OBJC__
 @class NSString;
 
-// return 0 on success
-int InitDecryption(NSString *tryPath, NSString **libpath);
+// return YES on success
+BOOL InitDecryption(NSString *tryPath);
 #endif
 
 extern dvdcss_t (*dvdcss_open)(char *);
