@@ -1,4 +1,3 @@
-
 #include "ListFiles.h"
 
 #include <unistd.h>
@@ -10,7 +9,7 @@
 #include <sys/stat.h>
 
 //-------------------------------------------------------------------------
-static int noCurAndParDir(struct dirent *entry)
+static int noCurAndParDir(const struct dirent *entry)
 {
     if ((strncmp(entry->d_name, ".", 256) == 0) || (strncmp(entry->d_name, "..", 256) == 0))
         return 0;
