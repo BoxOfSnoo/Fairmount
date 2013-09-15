@@ -1,4 +1,3 @@
-
 #import "Fairmount.h"
 #import "Overlay.h"
 #include "Decryption.h"
@@ -455,6 +454,7 @@ error:
 - (void) awakeFromNib
 {
     NSArray *libPaths = [NSArray arrayWithObjects:
+                             [[NSBundle mainBundle] pathForResource:@"libdvdcss.2" ofType:@"dylib"],
                              INSTALL_PATH,
                              [@"~/Library/Application Support/Fairmount/libdvdcss.2.dylib" stringByExpandingTildeInPath],
                              @"/usr/lib/libdvdcss.2.dylib",
