@@ -9,6 +9,7 @@
 #include <vector>
 #include <unistd.h>
 #include <assert.h>
+#include <pthread.h>
 
 //-------------------------------------------------------------------------
 typedef struct
