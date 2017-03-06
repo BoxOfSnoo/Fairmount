@@ -20,7 +20,7 @@ is located at: <https://github.com/pmetzger/Fairmount/downloads>
 
 You must also install the package found at:
 <http://download.videolan.org/libdvdcss/last/macosx/libdvdcss.pkg> --
-this will place the file libdvdcss.2.dylib into /usr/lib/ where the
+this will place the file libdvdcss.2.dylib into /usr/local/lib/ where the
 program will find it.
 
 If you don't install the library, the program will prompt you to do so.
