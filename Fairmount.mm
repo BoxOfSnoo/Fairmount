@@ -456,7 +456,7 @@ error:
     NSArray *libPaths = [NSArray arrayWithObjects:
                              INSTALL_PATH,
                              [@"~/Library/Application Support/Fairmount/libdvdcss.2.dylib" stringByExpandingTildeInPath],
-                             @"/usr/lib/libdvdcss.2.dylib",
+                             @"/usr/local/lib/libdvdcss.2.dylib",
                              @"/opt/local/lib/libdvdcss.2.dylib",
                              [[NSBundle mainBundle] pathForResource:@"libdvdcss.2" ofType:@"dylib"],
                              nil];
