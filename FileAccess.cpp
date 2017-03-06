@@ -8,6 +8,7 @@
 #include <sys/errno.h>
 #include <string>
 #include <assert.h>
+#include <pthread.h>
 
 //-------------------------------------------------------------------------
 class FileAccess : public IFileAccess
